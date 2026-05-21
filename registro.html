@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Usuarios</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="registro-body">
+
+    <div class="registro-container">
+
+        <div class="registro-card">
+
+            <h1>Registro de Usuarios</h1>
+
+            <form action="/registro" method="POST">
+
+                <input type="text"
+                       name="cedula"
+                       placeholder="Cédula"
+                       required>
+
+                <input type="text"
+                       name="placa"
+                       placeholder="Placa del vehículo"
+                       required>
+
+                <input type="text"
+                       name="carnet"
+                       placeholder="Código del carnet"
+                       required>
+
+                <button type="submit">
+                    Registrar Usuario
+                </button>
+
+            </form>
+
+            <a href="/lector" class="volver">
+                Ir al lector →
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

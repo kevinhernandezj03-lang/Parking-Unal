@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parqueadero</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Sistema de Parqueadero</h1>
+
+<h2>Registro</h2>
+<form action="/registro" method="post">
+    <input type="text" name="cedula" placeholder="Cédula" required>
+    <input type="text" name="placa" placeholder="Placa" required>
+    <button>Registrar</button>
+</form>
+
+<h2>Ingreso con carnet</h2>
+<form action="/ingreso" method="post">
+    <input type="text" name="cedula" placeholder="Cédula">
+    <button>Ingresar</button>
+</form>
+
+<h2>Ingreso manual</h2>
+<form action="/manual" method="post">
+    <input type="text" name="cedula" placeholder="Cédula">
+    <input type="text" name="placa" placeholder="Placa">
+    <button>Generar QR</button>
+</form>
+
+<h2>Salida carnet</h2>
+<form action="/salida_carnet" method="post">
+    <input type="text" name="cedula">
+    <button>Salir</button>
+</form>
+
+<h2>Salida QR</h2>
+<form action="/salida_qr" method="post">
+    <input type="text" name="cedula">
+    <button>Salir QR</button>
+</form>
+
+</body>
+</html>

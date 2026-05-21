@@ -1,44 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Parqueadero</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Usuarios</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
 
-<h1>Sistema de Parqueadero</h1>
+<body class="registro-body">
 
-<h2>Registro</h2>
-<form action="/registro" method="post">
-    <input type="text" name="cedula" placeholder="Cédula" required>
-    <input type="text" name="placa" placeholder="Placa" required>
-    <button>Registrar</button>
-</form>
+    <div class="registro-container">
 
-<h2>Ingreso con carnet</h2>
-<form action="/ingreso" method="post">
-    <input type="text" name="cedula" placeholder="Cédula">
-    <button>Ingresar</button>
-</form>
+        <div class="registro-card">
 
-<h2>Ingreso manual</h2>
-<form action="/manual" method="post">
-    <input type="text" name="cedula" placeholder="Cédula">
-    <input type="text" name="placa" placeholder="Placa">
-    <button>Generar QR</button>
-</form>
+            <h1>Registro de Usuarios</h1>
 
-<h2>Salida carnet</h2>
-<form action="/salida_carnet" method="post">
-    <input type="text" name="cedula">
-    <button>Salir</button>
-</form>
+            <form action="/registro" method="POST">
 
-<h2>Salida QR</h2>
-<form action="/salida_qr" method="post">
-    <input type="text" name="cedula">
-    <button>Salir QR</button>
-</form>
+                <input type="text"
+                       name="cedula"
+                       placeholder="Cédula"
+                       required>
+
+                <input type="text"
+                       name="placa"
+                       placeholder="Placa del vehículo"
+                       required>
+
+                <input type="text"
+                       name="carnet"
+                       placeholder="Código del carnet"
+                       required>
+
+                <button type="submit">
+                    Registrar Usuario
+                </button>
+
+            </form>
+
+            <a href="/lector" class="volver">
+                Ir al lector →
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
 </html>

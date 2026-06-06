@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Ingreso Manual</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="registro-body">
+
+<div class="registro-card">
+
+    <h1>Ingreso Manual</h1>
+
+    {% if mensaje %}
+
+        <div class="success">
+
+            {{ mensaje }}
+
+        </div>
+
+    {% endif %}
+
+    {% if ticket %}
+
+        <div class="ticket-box">
+
+            <h3>Ticket generado</h3>
+
+            <h2>{{ ticket }}</h2>
+
+        <p style="margin-top:10px;">
+
+            ⚠️ Este ticket será requerido para registrar la salida.
+
+        </p>
+
+        <p>
+
+            No perder el código QR generado.
+
+        </p>
+
+        </div>
+
+    {% endif %}
+
+    <form action="/manual_ingreso" method="POST">
+
+        <input type="text"
+               name="cedula"
+               placeholder="Cédula"
+               required>
+
+        <input type="text"
+               name="placa"
+               placeholder="Placa"
+               required>
+
+        <button type="submit">
+
+            Registrar Ingreso
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

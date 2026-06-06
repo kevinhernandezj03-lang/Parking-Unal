@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Control de Acceso</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="registro-body">
+
+<a href="/manual" class="manual-btn">
+    Ingreso Manual
+</a>
+
+<div class="registro-card">
+
+    <h1>Control de Acceso</h1>
+
+    <p>
+        Escanee un carnet o ingrese un código de ticket
+    </p>
+
+    {% if mensaje %}
+
+        <div class="success">
+
+            {{ mensaje }}
+
+        </div>
+
+    {% endif %}
+
+    <form action="/validar" method="POST">
+
+        <input type="text"
+               name="codigo"
+               placeholder="Carnet o Ticket QR"
+               required>
+
+        <button type="submit">
+
+            Validar Acceso
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
